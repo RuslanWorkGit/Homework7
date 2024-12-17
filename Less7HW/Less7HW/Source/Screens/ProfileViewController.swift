@@ -32,12 +32,12 @@ class ProfileViewController: UIViewController {
         dataProvider.loadAdminData()
     }
     
-    func updateUI() {
+    func updateUI(with data: ProfileData) {
         
-//        avaImageView.image = UIImage(named: "")
-//        firstNameLabel.text =
-//        lastNameLabel.text =
-//        eMailLabel.text =
-//        addressLabel.text =
+        avaImageView.image = UIImage(named: data.avatarName)
+        firstNameLabel.text = data.firstName
+        lastNameLabel.text = data.lastName
+        eMailLabel.text = data.email
+        addressLabel.text = data.address
     }
 }
