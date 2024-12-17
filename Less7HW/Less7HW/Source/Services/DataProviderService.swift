@@ -9,7 +9,7 @@ import Foundation
 
 class DataProviderService {
     
-    func loadUserData() {
+    func loadUserData(clouser: (ProfileData) -> Void) {
         
         let user = UserModel(
             userAvatarName: "userAvatar",
@@ -18,10 +18,13 @@ class DataProviderService {
             userEmail: "john.smith@gmail.com",
             userAdderss: "Green Bay, 1442 Sycamore Lake Road"
         )
+        
+        clouser(user)
     }
     
-    func loadAdminData() {
-        
+    func loadAdminData(clouser: ((ProfileData) -> ())) {
+
+                           
         let admin = AdminModel(
             adminAvatarName: "adminAvatar",
             adminFirstName: "Bob",
@@ -29,6 +32,8 @@ class DataProviderService {
             adminEmail: "bob.lester@gmail.com",
             adminAdderss: "Russellville, 1171 Cambridge Court"
         )
+        
+        clouser(admin)
     }
 }
 
